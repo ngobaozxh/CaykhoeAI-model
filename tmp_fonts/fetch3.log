@@ -1,0 +1,16 @@
+Fraunces        italic  300 600  vi      22128 ->  21596   112 glyphs
+Fraunces        italic  300 600  lext    71460 ->  35108    97 glyphs
+Fraunces        normal  300 600  vi      19700 ->  19112   111 glyphs
+Fraunces        normal  300 600  lext    59388 ->  29212    96 glyphs
+Literata        normal  300 700  vi      22312 ->  21284   114 glyphs
+Literata        normal  300 700  lext    89668 ->  40916   113 glyphs
+Be Vietnam Pro  normal  300      vi      12252 ->  11816   115 glyphs
+Be Vietnam Pro  normal  300      lext    13304 ->   6760    44 glyphs
+Be Vietnam Pro  normal  400      vi      11532 ->  11092   115 glyphs
+Be Vietnam Pro  normal  400      lext    13056 ->   6588    44 glyphs
+Be Vietnam Pro  normal  500      vi      12172 ->  11720   115 glyphs
+Be Vietnam Pro  normal  500      lext    13548 ->   6696    44 glyphs
+Be Vietnam Pro  normal  600      vi      12176 ->  11752   115 glyphs
+Be Vietnam Pro  normal  600      lext    13608 ->   6732    44 glyphs
+
+files: 14   raw 386304 -> subset 240384

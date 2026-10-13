@@ -1,0 +1,102 @@
+{
+  "tests": [
+    {
+      "name": "single-file model initializes with network disabled",
+      "passed": true
+    },
+    {
+      "name": "desktop has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "close predictions trigger caution",
+      "passed": true
+    },
+    {
+      "name": "crop mismatch triggers caution",
+      "passed": true
+    },
+    {
+      "name": "real model produces 14 valid probabilities",
+      "passed": true
+    },
+    {
+      "name": "repeated inference does not leak tensors",
+      "passed": true
+    },
+    {
+      "name": "nearly blank image rejected",
+      "passed": true
+    },
+    {
+      "name": "actual upload renders result",
+      "passed": true
+    },
+    {
+      "name": "structured result includes top three",
+      "passed": true
+    },
+    {
+      "name": "no unvalidated dose shown in new result",
+      "passed": true
+    },
+    {
+      "name": "360px mobile has no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "single-file history restored after reload",
+      "passed": true
+    },
+    {
+      "name": "new report PDF has valid file header",
+      "passed": true
+    },
+    {
+      "name": "early invalid file does not suppress history restore",
+      "passed": true
+    },
+    {
+      "name": "healthy IndexedDB merges fallback without duplicate entries",
+      "passed": true
+    },
+    {
+      "name": "startup history clear waits for persistent storage",
+      "passed": true
+    },
+    {
+      "name": "PWA precache explicitly reports complete",
+      "passed": true
+    },
+    {
+      "name": "PWA reload initializes while offline",
+      "passed": true
+    },
+    {
+      "name": "PWA inference works while offline",
+      "passed": true
+    },
+    {
+      "name": "no uncaught JS exceptions",
+      "passed": true
+    }
+  ],
+  "exceptions": [],
+  "freshProfile": true,
+  "runtime": {
+    "tf": "4.22.0",
+    "backend": "wasm",
+    "status": "AI sẵn sàng · WASM · phân tích tại máy"
+  },
+  "inference": {
+    "classes": 14,
+    "sum": 0.9999999688006938,
+    "ms": 272
+  },
+  "tensors": {
+    "before": 278,
+    "after": 278
+  },
+  "pdfBytes": 10754,
+  "ok": true
+}

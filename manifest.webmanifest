@@ -1,0 +1,15 @@
+{
+  "name": "Cây Khỏe AI – Chẩn đoán bệnh cây trồng",
+  "short_name": "Cây Khỏe AI",
+  "description": "Nhận gợi ý nhận diện và đối chiếu dấu hiệu trên cây, phân tích tại thiết bị",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#F5F6F0",
+  "theme_color": "#F5F6F0",
+  "lang": "vi",
+  "icons": [
+    {"src": "img/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "img/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}

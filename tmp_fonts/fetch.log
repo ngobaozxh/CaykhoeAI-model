@@ -1,0 +1,44 @@
+Fraunces        italic  300 600  vi       22128 ->  21580   112 glyphs
+Fraunces        italic  300 600  lext     71460 ->  35168    97 glyphs
+Fraunces        normal  300 600  vi       19700 ->  19108   111 glyphs
+Fraunces        normal  300 600  lext     59388 ->  29140    96 glyphs
+Newsreader      normal  300 600  vi       27248 ->  26768   112 glyphs
+Newsreader      normal  300 600  lext     86608 ->  20960    40 glyphs
+Literata        normal  300 700  vi       22312 ->  21308   114 glyphs
+Literata        normal  300 700  lext     89668 ->  40936   113 glyphs
+Bitter          normal  400      vi       10220 ->   9400   116 glyphs
+Bitter          normal  400      lext     32716 ->  14736   111 glyphs
+Bitter          normal  600      vi       10220 ->   9408   116 glyphs
+Bitter          normal  600      lext     32716 ->  14736   111 glyphs
+Public Sans     normal  400      vi        7716 ->   7092   116 glyphs
+Public Sans     normal  400      lext     18472 ->   7708    57 glyphs
+Public Sans     normal  400      lat      26832 ->  23448   220 glyphs
+Public Sans     normal  500      vi        7716 ->   7124   116 glyphs
+Public Sans     normal  500      lext     18472 ->   7740    57 glyphs
+Public Sans     normal  500      lat      26832 ->  23364   220 glyphs
+Public Sans     normal  600      vi        7716 ->   7056   116 glyphs
+Public Sans     normal  600      lext     18472 ->   7692    57 glyphs
+Public Sans     normal  600      lat      26832 ->  23440   220 glyphs
+Be Vietnam Pro  normal  300      vi       12252 ->  11816   115 glyphs
+Be Vietnam Pro  normal  300      lext     13304 ->   6760    44 glyphs
+Be Vietnam Pro  normal  300      lat      21908 ->  19948   219 glyphs
+Be Vietnam Pro  normal  400      vi       11532 ->  11088   115 glyphs
+Be Vietnam Pro  normal  400      lext     13056 ->   6588    44 glyphs
+Be Vietnam Pro  normal  400      lat      21168 ->  19500   219 glyphs
+Be Vietnam Pro  normal  500      vi       12172 ->  11728   115 glyphs
+Be Vietnam Pro  normal  500      lext     13548 ->   6704    44 glyphs
+Be Vietnam Pro  normal  500      lat      21892 ->  20244   219 glyphs
+Be Vietnam Pro  normal  600      vi       12176 ->  11748   115 glyphs
+Be Vietnam Pro  normal  600      lext     13608 ->   6736    44 glyphs
+Be Vietnam Pro  normal  600      lat      22032 ->  20204   219 glyphs
+IBM Plex Sans   normal  400      vi       13160 ->  12484   114 glyphs
+IBM Plex Sans   normal  400      lext     30964 ->  10248    42 glyphs
+IBM Plex Sans   normal  400      lat      45712 ->  37520   224 glyphs
+IBM Plex Sans   normal  500      vi       13160 ->  12424   114 glyphs
+IBM Plex Sans   normal  500      lext     30964 ->  10248    42 glyphs
+IBM Plex Sans   normal  500      lat      45712 ->  37556   224 glyphs
+IBM Plex Sans   normal  600      vi       13160 ->  12424   114 glyphs
+IBM Plex Sans   normal  600      lext     30964 ->  10248    42 glyphs
+IBM Plex Sans   normal  600      lat      45712 ->  37548   224 glyphs
+
+files: 42   raw 1101600 -> subset 711676 (35.4% smaller)
