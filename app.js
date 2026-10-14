@@ -91,9 +91,33 @@
       if (candidate) candidate.dispose();
       if (mo_hinh) { mo_hinh.dispose(); mo_hinh = null; }
       modelReady = false;
-      setStatus('Chưa tải được AI. ' + (location.protocol === 'file:' && !window.__CKAI_SINGLE_FILE ? 'Mở bản cay-khoe-ai-1file.html, không mở index.html trực tiếp.' : 'Kiểm tra tệp dữ liệu hoặc kết nối rồi thử lại.'),'error');
+      const detail = (location.protocol === 'file:' && !window.__CKAI_SINGLE_FILE)
+        ? 'Mở bản cay-khoe-ai-1file.html, không mở index.html trực tiếp.'
+        : await diagnoseModelError();
+      setStatus('Chưa tải được AI. ' + detail, 'error');
       console.error(e);
     } finally { modelLoading = false; updateSendState(); }
+  }
+  async function diagnoseModelError() {
+    if (location.protocol === 'file:') return 'Tệp mô hình không đọc được từ đĩa. Hãy dùng bản một tệp.';
+    const dir = MODEL_URL.split('/').slice(0, -1).join('/');
+    let res;
+    try {
+      res = await fetch(MODEL_URL, { method: 'GET', cache: 'no-store' });
+    } catch (e) {
+      return 'Không kết nối được để lấy gói AI. Kiểm tra mạng rồi thử lại.';
+    }
+    if (res.status === 404) return 'Máy chủ không có tệp mô hình (404): ' + MODEL_URL + '. Khi phát hành lên máy chủ tĩnh phải tải lên đủ thư mục ' + dir + '/.';
+    if (!res.ok) return 'Máy chủ trả về lỗi ' + res.status + ' khi đọc gói AI.';
+    try {
+      const spec = await res.json();
+      const shards = (spec.weightsManifest || []).reduce((acc, g) => acc.concat(g.paths || []), []);
+      for (const name of shards) {
+        const r = await fetch(dir + '/' + name, { method: 'GET', cache: 'no-store' });
+        if (!r.ok) return 'Thiếu tệp trọng số ' + name + ' (lỗi ' + r.status + '). Phải tải lên đủ thư mục ' + dir + '/, gồm cả tệp .bin.';
+      }
+    } catch (e) {  }
+    return 'Gói AI đọc được nhưng không nạp được. Tải lại trang rồi thử lại.';
   }
   async function decodeImage(file) {
     if (window.createImageBitmap) { try { return await createImageBitmap(file); } catch (e) {  } }

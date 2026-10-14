@@ -1,0 +1,64 @@
+name: Deploy to GitHub Pages
+
+# Assembles the deployable site with tools/build_deploy.py and publishes it.
+# The assembler fails the job when any runtime file is missing or truncated,
+# so a broken site cannot be published silently.
+#
+# One-time setup in the repository: Settings -> Pages -> Build and deployment
+# -> Source: GitHub Actions.
+
+on:
+  push:
+    branches: [main, master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Let a newer commit supersede an in-flight deployment.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Assemble and verify the deployable site
+        run: python tools/build_deploy.py
+
+      - name: Show what will be published
+        run: |
+          echo "Files: $(find _site -type f | wc -l)"
+          echo "Size:  $(du -sh _site | cut -f1)"
+          test -f _site/.nojekyll
+          test -s _site/model/quant/group1-shard1of1.bin
+
+      - name: Configure Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload the site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
